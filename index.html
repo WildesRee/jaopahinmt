@@ -528,12 +528,13 @@
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 40px;
+            margin-top: 30px; /* Space for badges above cards */
         }
 
         .coach-card {
             background: var(--white);
             border-radius: 15px;
-            overflow: hidden;
+            overflow: visible; /* Changed to visible so badge shows */
             box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
             transition: all 0.4s ease;
             position: relative;
@@ -604,6 +605,7 @@
             background: var(--light-gray);
             position: relative;
             overflow: hidden;
+            border-radius: 15px 15px 0 0; /* Match card border-radius for top corners */
         }
 
         .coach-image img {
@@ -870,6 +872,7 @@
             grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
             gap: 30px;
             margin-bottom: 60px;
+            margin-top: 30px; /* Space for badges above cards */
         }
 
         .price-card {
@@ -881,7 +884,7 @@
             transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
             border: 3px solid transparent;
             position: relative;
-            overflow: hidden;
+            overflow: visible; /* Changed to visible so badges show */
         }
 
         .price-card::before {
@@ -1242,6 +1245,12 @@
         @media (max-width: 768px) {
             section {
                 padding: 60px 20px;
+            }
+            
+            .hero {
+                padding: 0; /* Hero needs no padding for full width */
+                background-size: cover;
+                background-position: center center;
             }
 
             .hero h1 {
