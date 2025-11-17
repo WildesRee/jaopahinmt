@@ -525,6 +525,44 @@
             transition: all 0.4s ease;
             position: relative;
         }
+        
+        /* Head Coach Highlight */
+        .coach-card.head-coach {
+            border: 2px solid var(--gold);
+            box-shadow: 0 10px 40px rgba(212, 175, 55, 0.3);
+        }
+        
+        .coach-card.head-coach:hover {
+            box-shadow: 0 20px 60px rgba(212, 175, 55, 0.5);
+        }
+        
+        .head-coach-badge {
+            position: absolute;
+            top: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: linear-gradient(135deg, var(--gold), #ffd700);
+            color: var(--black);
+            padding: 8px 25px;
+            border-radius: 20px;
+            font-weight: 700;
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            box-shadow: 0 5px 20px rgba(212, 175, 55, 0.5);
+            z-index: 10;
+            white-space: nowrap;
+            animation: headCoachGlow 3s ease-in-out infinite;
+        }
+        
+        @keyframes headCoachGlow {
+            0%, 100% {
+                box-shadow: 0 5px 20px rgba(212, 175, 55, 0.5);
+            }
+            50% {
+                box-shadow: 0 5px 30px rgba(212, 175, 55, 0.7);
+            }
+        }
 
         .coach-card::after {
             content: '';
@@ -861,7 +899,7 @@
             box-shadow: 0 15px 50px rgba(212, 175, 55, 0.4);
             background: linear-gradient(135deg, var(--black), #1a1a1a);
             color: var(--white);
-            padding-top: 50px; /* Extra padding for badge */
+            padding-top: 60px; /* Extra padding for badge */
         }
         
         .price-card.popular h4 {
@@ -1278,7 +1316,7 @@
             }
             
             .price-card.popular {
-                padding-top: 45px; /* Adjusted padding for mobile badge */
+                padding-top: 50px; /* Adjusted padding for mobile badge */
             }
         }
     </style>
@@ -1416,7 +1454,10 @@
             <p class="thai">ผู้ฝึกสอนผู้เชี่ยวชาญที่ทุ่มเทเพื่อความสำเร็จของคุณ</p>
         </div>
         <div class="coaches-grid">
-            <div class="coach-card fade-in-left">
+            <div class="coach-card head-coach fade-in-left">
+                <div class="head-coach-badge">
+                    <span class="en">HEAD COACH</span><span class="thai">หัวหน้าโค้ช</span>
+                </div>
                 <div class="coach-image">
                     <img src="img/kru-tum.png" alt="Kru Tum - Head Coach">
                 </div>
