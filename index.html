@@ -186,6 +186,7 @@
             flex-direction: column;
             gap: 5px;
             cursor: pointer;
+            z-index: 1001;
         }
 
         .mobile-menu span {
@@ -193,6 +194,18 @@
             height: 3px;
             background: var(--gold);
             transition: all 0.3s ease;
+        }
+        
+        .mobile-menu.active span:nth-child(1) {
+            transform: rotate(45deg) translate(5px, 5px);
+        }
+        
+        .mobile-menu.active span:nth-child(2) {
+            opacity: 0;
+        }
+        
+        .mobile-menu.active span:nth-child(3) {
+            transform: rotate(-45deg) translate(7px, -6px);
         }
 
         /* Hero Section with Gradient Text */
@@ -670,6 +683,16 @@
             position: absolute;
             top: 0;
             left: 0;
+        }
+        
+        /* Pouya - more left visible */
+        .fighter-card:nth-child(1) img {
+            object-position: 40% top;
+        }
+        
+        /* Ali - more right visible */
+        .fighter-card:nth-child(2) img {
+            object-position: 60% top;
         }
 
         .fighter-card::before {
@@ -1192,6 +1215,32 @@
             .nav-links {
                 display: none;
             }
+            
+            .nav-links.active {
+                display: flex;
+                position: fixed;
+                top: 80px;
+                left: 0;
+                right: 0;
+                flex-direction: column;
+                background: rgba(10, 10, 10, 0.98);
+                padding: 30px;
+                gap: 20px;
+                box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+                border-top: 2px solid var(--gold);
+                animation: slideDown 0.3s ease;
+            }
+            
+            @keyframes slideDown {
+                from {
+                    opacity: 0;
+                    transform: translateY(-20px);
+                }
+                to {
+                    opacity: 1;
+                    transform: translateY(0);
+                }
+            }
 
             .mobile-menu {
                 display: flex;
@@ -1495,9 +1544,9 @@
                     <img src="img/kru-phee.png" alt="Coach">
                 </div>
                 <div class="coach-info">
-                    <h3><span class="en">Coach Name</span><span class="thai">ชื่อโค้ช</span></h3>
-                    <p class="role"><span class="en">Assistant Coach</span><span class="thai">ผู้ช่วยโค้ช</span></p>
-                    <p class="en">Experienced trainer specializing in technique development and conditioning.</p>
+                    <h3><span class="en">Kru "Power" Phee</span><span class="thai">ชื่อโค้ช</span></h3>
+                    <p class="role"><span class="en">Coach</span><span class="thai">ผู้ช่วยโค้ช</span></p>
+                    <p class="en">Experienced trainer specializing in different styles and techniques.</p>
                     <p class="thai">ผู้ฝึกสอนผู้มีประสบการณ์เชี่ยวชาญด้านการพัฒนาเทคนิคและการปรับสภาพร่างกาย</p>
                 </div>
             </div>
@@ -1506,9 +1555,9 @@
                     <img src="img/kru-pun.png" alt="Coach">
                 </div>
                 <div class="coach-info">
-                    <h3><span class="en">Coach Name</span><span class="thai">ชื่อโค้ช</span></h3>
-                    <p class="role"><span class="en">Kids Coach</span><span class="thai">โค้ชเด็ก</span></p>
-                    <p class="en">Specialized in teaching young fighters with patience and energy.</p>
+                    <h3><span class="en">Kru "Punisher" Pun</span><span class="thai">ชื่อโค้ช</span></h3>
+                    <p class="role"><span class="en">Coach</span><span class="thai">โค้ชเด็ก</span></p>
+                    <p class="en">Experienced trainer specializing in technique development and conditioning.</p>
                     <p class="thai">เชี่ยวชาญในการสอนนักสู้เยาวชนด้วยความอดทนและพลังงาน</p>
                 </div>
             </div>
@@ -1524,26 +1573,26 @@
         </div>
         <div class="fighters-grid">
             <div class="fighter-card fade-in-scale">
-                <img src="img/fighter1.png" alt="Fighter">
-                <div class="fighter-overlay">
-                    <h3><span class="en">Fighter Name</span><span class="thai">ชื่อนักสู้</span></h3>
-                    <p class="en">Professional fighter representing Jaopahin Muay Thai</p>
-                    <p class="thai">นักสู้มืออาชีพตัวแทนเจ้าพะหินมวยไทย</p>
-                </div>
-            </div>
-            <div class="fighter-card fade-in-scale">
                 <img src="img/pouya.png" alt="Pouya Byrami">
                 <div class="fighter-overlay">
                     <h3>Pouya Byrami</h3>
-                    <p class="en">Winner at Thai Fight League - Representing Jaopahin Muay Thai with Coach Tum</p>
+                    <p class="en">Winner Thai Fight League - Representing Jaopahin Muay Thai with Coach Tum</p>
                     <p class="thai">แชมป์ไทยไฟท์ลีก - ตัวแทนเจ้าพะหินมวยไทยกับครูตุ่ม</p>
+                </div>
+            </div>
+            <div class="fighter-card fade-in-scale">
+                <img src="img/fighter1.png" alt="Fighter">
+                <div class="fighter-overlay">
+                    <h3><span class="en">Mohammad "Butcher" Ali</span><span class="thai">โมฮัมหมัด "บุทเชอร์" อาลี</span></h3>
+                    <p class="en">Professional fighter representing Jaopahin Muay Thai</p>
+                    <p class="thai">นักสู้มืออาชีพตัวแทนเจ้าพะหินมวยไทย</p>
                 </div>
             </div>
             <div class="fighter-card fade-in-scale">
                 <img src="img/joseph.png" alt="Joseph Grobani">
                 <div class="fighter-overlay">
                     <h3>Joseph Grobani</h3>
-                    <p class="en">Thai Fight League competitor with Head Coach Tum - Professional level training</p>
+                    <p class="en">Thai Fight League competitor with Head Coach Tum</p>
                     <p class="thai">นักสู้ไทยไฟท์ลีกกับหัวหน้าโค้ชตุ่ม - การฝึกระดับมืออาชีพ</p>
                 </div>
             </div>
@@ -1947,6 +1996,23 @@
                 langBtns[1].classList.add('active');
             }
         }
+        
+        // Mobile Menu Toggle
+        const mobileMenu = document.querySelector('.mobile-menu');
+        const navLinks = document.querySelector('.nav-links');
+        
+        mobileMenu.addEventListener('click', () => {
+            mobileMenu.classList.toggle('active');
+            navLinks.classList.toggle('active');
+        });
+        
+        // Close mobile menu when clicking on a link
+        document.querySelectorAll('.nav-links a').forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.remove('active');
+                navLinks.classList.remove('active');
+            });
+        });
     </script>
 </body>
 </html>
