@@ -3,7 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Jaopahin Muay Thai | Family-Owned Gym in Hua Hin, Thailand</title>
+    <title>JAOPAHIN MUAY THAI | Family-Owned Gym in Hua Hin, Thailand</title>
+    <link rel="icon" type="image/png" href="img/logo.png">
+    <link rel="preload" as="image" href="img/kru-tum.png">
     <meta name="description" content="Train authentic Muay Thai in Hua Hin. Family-owned gym with experienced coaches, all levels welcome. Group, private & kids classes available.">
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700;900&display=swap');
@@ -218,7 +220,16 @@
             justify-content: center;
             overflow: hidden;
             background: linear-gradient(135deg, rgba(0, 0, 0, 0.8), rgba(212, 175, 55, 0.2)), 
-                        url('img/kru-tum.png') center/cover no-repeat;
+                        url('img/kru-tum.png') center center/cover no-repeat;
+            will-change: transform;
+        }
+        
+        /* Desktop optimization - better background position */
+        @media (min-width: 1024px) {
+            .hero {
+                background-position: center 40%;
+                background-size: cover;
+            }
         }
         
         /* Fixed background only on desktop for better mobile performance */
@@ -1431,7 +1442,7 @@
         <div class="hero-content">
             <h1><span class="en">JAOPAHIN MUAY THAI</span><span class="thai">เจ้าพะหินมวยไทย</span></h1>
             <p><span class="en">Family-Owned • Authentic Training • All Levels Welcome</span><span class="thai">ครอบครัว • การฝึกที่แท้จริง • ทุกระดับยินดีต้อนรับ</span></p>
-            <a href="#contact" class="cta-btn"><span class="en">START YOUR JOURNEY</span><span class="thai">เริ่มต้นการเดินทางของคุณ</span></a>
+            <a href="#about" class="cta-btn"><span class="en">START YOUR JOURNEY</span><span class="thai">เริ่มต้นการเดินทางของคุณ</span></a>
         </div>
     </section>
 
@@ -1871,27 +1882,6 @@
         </div>
         <div class="contact-grid">
             <div class="contact-info">
-                <div class="contact-item fade-in-left">
-                    <div class="contact-icon">📱</div>
-                    <div class="contact-details">
-                        <h4>Phone / WhatsApp</h4>
-                        <a href="tel:+66">[Add Number]</a>
-                    </div>
-                </div>
-                <div class="contact-item fade-in-left">
-                    <div class="contact-icon">📧</div>
-                    <div class="contact-details">
-                        <h4>Email</h4>
-                        <a href="/cdn-cgi/l/email-protection#98f1f6fef7d8f2f9f7e8f9f0f1f6b6fbf7f5">[Add Email]</a>
-                    </div>
-                </div>
-                <div class="contact-item fade-in-left">
-                    <div class="contact-icon">💬</div>
-                    <div class="contact-details">
-                        <h4>Line ID</h4>
-                        <a href="#">[Add Line ID]</a>
-                    </div>
-                </div>
                 <div class="contact-item fade-in-left">
                     <div class="contact-icon">📷</div>
                     <div class="contact-details">
